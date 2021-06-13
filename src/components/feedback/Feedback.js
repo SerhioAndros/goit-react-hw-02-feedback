@@ -43,6 +43,7 @@ export default class Feedback extends Component {
   };
 
   render() {
+    const { good, neutral, bad } = this.state;
     return (
       <div className={styles.wrapper}>
         <Section title="Please, leave feedback">
@@ -54,9 +55,9 @@ export default class Feedback extends Component {
 
         <Section title="Statistics">
           <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
+            good={good}
+            neutral={neutral}
+            bad={bad}
             total={this.countTotalFeedback}
             positivePercentage={this.countPositiveFeedbackPercentage}
           />
