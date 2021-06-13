@@ -1,36 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "./Statistics.module.css";
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
   <>
     {!total() ? (
-      <p>No feedback given</p>
+      <p className={styles.placeholderText}>No feedback given</p>
     ) : (
-      <ul className="stats-list">
-        <li className="stats-item">
-          <p className="stats-key">
-            Good: <span className="stats-value">{good}</span>
+      <ul className={styles.statsList}>
+        <li className={styles.statsItem}>
+          <p>
+            Good: <span>{good}</span>
           </p>
         </li>
-        <li className="stats-item">
-          <p className="stats-key">
-            Neutral: <span className="stats-value">{neutral}</span>
+        <li className={styles.statsItem}>
+          <p>
+            Neutral: <span>{neutral}</span>
           </p>
         </li>
-        <li className="stats-item">
-          <p className="stats-key">
-            Bad: <span className="stats-value">{bad}</span>
+        <li className={styles.statsItem}>
+          <p>
+            Bad: <span>{bad}</span>
           </p>
         </li>
-        <li className="stats-item">
-          <p className="stats-key">
-            Total: <span className="stats-value">{total()}</span>
+        <li className={styles.statsItem}>
+          <p>
+            Total: <span>{total()}</span>
           </p>
         </li>
-        <li className="stats-item">
-          <p className="stats-key">
-            Positive feedback:{" "}
-            <span className="stats-value">{positivePercentage()}%</span>
+        <li className={styles.statsItem}>
+          <p>
+            Positive feedback: <span>{positivePercentage()}%</span>
           </p>
         </li>
       </ul>

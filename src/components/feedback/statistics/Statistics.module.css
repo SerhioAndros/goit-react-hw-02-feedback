@@ -1,0 +1,22 @@
+.placeholderText {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 25px;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  font-weight: 400;
+}
+.statsList {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 320px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  font-weight: 600;
+  color: rgb(15, 3, 82);
+}
+.statsItem:not(:last-child) {
+  margin-bottom: 15px;
+}

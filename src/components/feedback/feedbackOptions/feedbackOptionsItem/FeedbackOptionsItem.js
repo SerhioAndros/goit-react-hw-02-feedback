@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "./FeedbackOptionsItem.module.css";
 
 const FeedbackOptionsItem = ({ type, onLeaveFeedback }) => (
-  <li className="button-list-item">
+  <li className={styles.buttonListItem}>
     <button
       type="button"
-      className="button-rate"
+      className={styles.buttonRate}
       data-type={type}
       onClick={onLeaveFeedback}
     >

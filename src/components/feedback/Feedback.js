@@ -1,5 +1,6 @@
 import React from "react";
 import { Component } from "react";
+import styles from "./Feedback.module.css";
 // функция roundingToDecimal округляет до определеннго количества значков
 // после запятой. Она принимает 2 аргумента, первый - число, которое нужно
 // округлить, второй - сколько знаков после запятой должно остаться
@@ -30,7 +31,6 @@ export default class Feedback extends Component {
 
   onIncrement = (evt) => {
     const stateValue = evt.target.dataset.type;
-    console.log(stateValue);
     this.setState((prevState) => {
       if (stateValue === "good") {
         return { good: prevState.good + 1 };
@@ -44,8 +44,8 @@ export default class Feedback extends Component {
 
   render() {
     return (
-      <>
-        <Section title="Please leave feedback">
+      <div className={styles.wrapper}>
+        <Section title="Please, leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
             onLeaveFeedback={this.onIncrement}
@@ -61,7 +61,7 @@ export default class Feedback extends Component {
             positivePercentage={this.countPositiveFeedbackPercentage}
           />
         </Section>
-      </>
+      </div>
     );
   }
 }

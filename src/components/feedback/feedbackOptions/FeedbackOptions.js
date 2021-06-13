@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "./FeedbackOptions.module.css";
 
 import FeedbackOptionsItem from "./feedbackOptionsItem/FeedbackOptionsItem";
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => (
-  <ul className="button-list">
+  <ul className={styles.buttonList}>
     {options.map((option) => (
       <FeedbackOptionsItem
         key={option}
