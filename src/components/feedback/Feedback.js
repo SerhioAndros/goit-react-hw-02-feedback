@@ -30,15 +30,9 @@ export default class Feedback extends Component {
   };
 
   onIncrement = (evt) => {
-    const stateValue = evt.target.dataset.type;
+    const stateValue = evt.currentTarget.dataset.type;
     this.setState((prevState) => {
-      if (stateValue === "good") {
-        return { good: prevState.good + 1 };
-      } else if (stateValue === "neutral") {
-        return { neutral: prevState.neutral + 1 };
-      } else if (stateValue === "bad") {
-        return { bad: prevState.bad + 1 };
-      }
+      return { [stateValue]: prevState[stateValue] + 1 };
     });
   };
 
