@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Statistics.module.css";
+import Notification from "./notification/Notification";
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
   <>
     {!total() ? (
-      <p className={styles.placeholderText}>No feedback given</p>
+      <Notification message={"No feedback given"} />
     ) : (
       <ul className={styles.statsList}>
         <li className={styles.statsItem}>

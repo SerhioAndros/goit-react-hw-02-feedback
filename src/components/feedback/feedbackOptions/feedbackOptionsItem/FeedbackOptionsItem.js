@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./FeedbackOptionsItem.module.css";
+import { capitalLetter } from "../../../../lib/custom-functions";
 
 const FeedbackOptionsItem = ({ type, onLeaveFeedback }) => (
   <li className={styles.buttonListItem}>
@@ -10,7 +11,7 @@ const FeedbackOptionsItem = ({ type, onLeaveFeedback }) => (
       data-type={type}
       onClick={onLeaveFeedback}
     >
-      {type[0].toUpperCase() + type.slice(1, type.length)}
+      {capitalLetter(type)}
     </button>
   </li>
 );
